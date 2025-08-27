@@ -14,7 +14,6 @@ public class WeatherScheduler {
     private final WeatherClient weatherClient;
     private final DateWeatherRepository dateWeatherRepository;
 
-    // 매일 새벽 1시
     @Scheduled(cron = "0 0 1 * * *")
     public void saveTodayWeather() {
         var today = weatherClient.fetchCurrent();
